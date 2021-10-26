@@ -1,8 +1,8 @@
 package dynamic.connectivity;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QuickFindTest {
 
@@ -13,6 +13,7 @@ public class QuickFindTest {
         int[] expected = {0, 1, 2, 3, 3, 5, 6, 7, 8, 9};
         assertArrayEquals(expected, qf.id);
     }
+
     @Test
     public void test_2() {
         QuickFind qf = new QuickFind(10);
@@ -27,8 +28,8 @@ public class QuickFindTest {
         QuickFind qf = new QuickFind(10);
         qf.union(4, 3);
         qf.union(3, 8);
-        assertTrue(qf.connected(4,8));
-        assertFalse(qf.connected(0,8));
+        assertTrue(qf.connected(4, 8));
+        assertFalse(qf.connected(0, 8));
     }
 
 }
