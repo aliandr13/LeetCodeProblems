@@ -11,6 +11,20 @@ import java.util.Set;
  */
 public class L448 {
 
+    public List<Integer> findDisappearedNumbersSet(int[] nums) {
+        Set<Integer> s = new HashSet(nums.length);
+
+        for (int n : nums){
+            s.add(n);
+        }
+        List<Integer> r = new ArrayList<>();
+        for (int i = 1; i < nums.length+1; i++){
+            if(!s.contains(i)) r.add(i);
+        }
+        return r;
+    }
+
+
     // [1,2,3,4,1] -> [0,0,0,0,0]
     public static List<Integer> findDisappearedNumbers(int[] nums) {
         Set<Integer> set = new HashSet<>(nums.length + 1);
