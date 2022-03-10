@@ -25,6 +25,11 @@ public final class TreeUtils {
         return a;
     }
 
+    //      3
+    //     / \
+    //    11   4
+    //   / \   \
+    //  4   -2  1
     public static Node<Integer> getIntTree() {
         return getIntTree(List.of(3, 11, 4, -2, 4, 1));
     }
@@ -39,8 +44,8 @@ public final class TreeUtils {
 
         a.left = b;
         a.right = c;
-        b.left = d;
-        b.right = e;
+        b.right = d;
+        b.left = e;
         c.right = f;
         return a;
     }
