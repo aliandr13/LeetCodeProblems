@@ -11,19 +11,18 @@ public class L102 {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) return List.of();
-        Queue<List<TreeNode>> queue = new LinkedList<>();
-        queue.add(List.of(root));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
         List<List<Integer>> result = new ArrayList<>();
         while (!queue.isEmpty()) {
-            List<TreeNode> current = queue.poll();
-            List<TreeNode> next = new ArrayList<>();
+            int size = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
-            for (TreeNode node : current) {
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
                 currentLevel.add(node.val);
-                if (node.left != null) next.add(node.left);
-                if (node.right != null) next.add(node.right);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
             }
-            if (!next.isEmpty()) queue.add(next);
             result.add(currentLevel);
         }
         return result;
