@@ -2,11 +2,6 @@ package easy;
 
 import tree.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 /**
  * Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
  */

@@ -23,8 +23,18 @@ public class TreeNode {
         return this;
     }
 
+    public TreeNode withLeft(int val) {
+        this.left = TreeNode.of(val);
+        return this;
+    }
+
     public TreeNode withRight(TreeNode right) {
         this.right = right;
+        return this;
+    }
+
+    public TreeNode withRight(int val) {
+        this.right = TreeNode.of(val);
         return this;
     }
 
