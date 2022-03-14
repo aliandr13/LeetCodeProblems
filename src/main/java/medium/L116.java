@@ -1,5 +1,7 @@
 package medium;
 
+import tree.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -41,36 +43,4 @@ public class L116 {
         return root;
     }
 
-    static class Node {
-        int val;
-        Node left;
-        Node right;
-        Node next;
-
-        public Node(int val) {
-            this.val = val;
-        }
-
-        static Node of(int val) {
-            return new Node(val);
-        }
-
-        public Node withLeft(int val) {
-            this.left = Node.of(val);
-            return this;
-        }
-
-        public Node withRight(int val) {
-            this.right = Node.of(val);
-            return this;
-        }
-
-        @Override
-        public String toString() {
-            return "Val=" + val +
-                    " Left=" + (left == null ? "null" : left.val) +
-                    " Right=" + (right == null ? "null" : right.val) +
-                    " Next=" + (next == null ? " null" : next.val);
-        }
-    }
 }

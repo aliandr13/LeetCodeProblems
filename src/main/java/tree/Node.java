@@ -1,25 +1,34 @@
 package tree;
 
-public class Node<T> {
+public class Node {
+    public int val;
+    public Node left;
+    public Node right;
+    public Node next;
 
-    public final T value;
-    public Node<T> left;
-    public Node<T> right;
-
-    public Node(T value) {
-        this.value = value;
+    public Node(int val) {
+        this.val = val;
     }
 
-    public static <T> Node<T> of(T value) {
-        return new Node<>(value);
+    static Node of(int val) {
+        return new Node(val);
+    }
+
+    public Node withLeft(int val) {
+        this.left = Node.of(val);
+        return this;
+    }
+
+    public Node withRight(int val) {
+        this.right = Node.of(val);
+        return this;
     }
 
     @Override
     public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", left=" + (left == null ? "null" : left.value) +
-                ", right=" + (right == null ? "null" : right.value) +
-                '}';
+        return "Val=" + val +
+                " Left=" + (left == null ? "null" : left.val) +
+                " Right=" + (right == null ? "null" : right.val) +
+                " Next=" + (next == null ? " null" : next.val);
     }
 }

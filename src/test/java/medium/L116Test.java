@@ -1,7 +1,7 @@
 package medium;
 
-import medium.L116.Node;
 import org.junit.jupiter.api.Test;
+import tree.Node;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

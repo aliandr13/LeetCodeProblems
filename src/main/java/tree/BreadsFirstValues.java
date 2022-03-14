@@ -12,13 +12,13 @@ public class BreadsFirstValues<T> {
     //    b   c
     //   / \   \
     //  d   e   f
-    public List<T> travers(Node<T> root) {
+    public List<T> travers(MyNode<T> root) {
         if (root == null) return List.of();
         List<T> result = new ArrayList<>();
-        Queue<Node<T>> q = new LinkedList<>();
+        Queue<MyNode<T>> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
-            Node<T> current = q.poll();
+            MyNode<T> current = q.poll();
             result.add(current.value);
             if (current.left != null) q.add(current.left);
             if (current.right != null) q.add(current.right);
@@ -26,12 +26,12 @@ public class BreadsFirstValues<T> {
         return result;
     }
 
-    public boolean includes(Node<T> root, T target) {
+    public boolean includes(MyNode<T> root, T target) {
         if (root == null) return false;
-        Queue<Node<T>> q = new LinkedList<>();
+        Queue<MyNode<T>> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
-            Node<T> current = q.poll();
+            MyNode<T> current = q.poll();
             if (target.equals(current.value)) return true;
             if (current.left != null) q.add(current.left);
             if (current.right != null) q.add(current.right);
@@ -39,13 +39,13 @@ public class BreadsFirstValues<T> {
         return false;
     }
 
-    public int treeSum(Node<T> node) {
-        if (node == null) return 0;
-        Queue<Node<T>> queue = new LinkedList<>();
+    public int treeSum(MyNode<T> myNode) {
+        if (myNode == null) return 0;
+        Queue<MyNode<T>> queue = new LinkedList<>();
         int totalSum = 0;
-        queue.add(node);
+        queue.add(myNode);
         while (!queue.isEmpty()) {
-            Node<T> current = queue.poll();
+            MyNode<T> current = queue.poll();
             totalSum += (Integer) current.value;
             if (current.left != null) queue.add(current.left);
             if (current.right != null) queue.add(current.right);
@@ -53,13 +53,13 @@ public class BreadsFirstValues<T> {
         return (totalSum);
     }
 
-    public int treeMinValue(Node<T> node) {
-        if (node == null) return 0;
-        Queue<Node<T>> queue = new LinkedList<>();
+    public int treeMinValue(MyNode<T> myNode) {
+        if (myNode == null) return 0;
+        Queue<MyNode<T>> queue = new LinkedList<>();
         int min = Integer.MAX_VALUE;
-        queue.add(node);
+        queue.add(myNode);
         while (!queue.isEmpty()) {
-            Node<T> current = queue.poll();
+            MyNode<T> current = queue.poll();
             min = Math.min((Integer) current.value, min);
             if (current.left != null) queue.add(current.left);
             if (current.right != null) queue.add(current.right);

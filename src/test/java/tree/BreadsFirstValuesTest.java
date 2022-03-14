@@ -13,7 +13,7 @@ class BreadsFirstValuesTest {
     //  d   e   f
     @Test
     void travers() {
-        Node<Character> tree = TreeUtils.getTree();
+        MyNode<Character> tree = TreeUtils.getTree();
         BreadsFirstValues<Character> bfv = new BreadsFirstValues<>();
         List<Character> treeValues = bfv.travers(tree);
 

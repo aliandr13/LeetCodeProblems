@@ -9,13 +9,13 @@ public final class TreeUtils {
     //    b   c
     //   / \   \
     //  d   e   f
-    public static Node<Character> getTree() {
-        Node<Character> a = new Node<>('a');
-        Node<Character> b = new Node<>('b');
-        Node<Character> c = new Node<>('c');
-        Node<Character> d = new Node<>('d');
-        Node<Character> e = new Node<>('e');
-        Node<Character> f = new Node<>('f');
+    public static MyNode<Character> getTree() {
+        MyNode<Character> a = new MyNode<>('a');
+        MyNode<Character> b = new MyNode<>('b');
+        MyNode<Character> c = new MyNode<>('c');
+        MyNode<Character> d = new MyNode<>('d');
+        MyNode<Character> e = new MyNode<>('e');
+        MyNode<Character> f = new MyNode<>('f');
 
         a.left = b;
         a.right = c;
@@ -30,17 +30,17 @@ public final class TreeUtils {
     //    11   4
     //   / \   \
     //  4   -2  1
-    public static Node<Integer> getIntTree() {
+    public static MyNode<Integer> getIntTree() {
         return getIntTree(List.of(3, 11, 4, -2, 4, 1));
     }
 
-    public static Node<Integer> getIntTree(List<Integer> nums) {
-        Node<Integer> a = Node.of(nums.get(0));
-        Node<Integer> b = Node.of(nums.get(1));
-        Node<Integer> c = Node.of(nums.get(2));
-        Node<Integer> d = Node.of(nums.get(3));
-        Node<Integer> e = Node.of(nums.get(4));
-        Node<Integer> f = Node.of(nums.get(5));
+    public static MyNode<Integer> getIntTree(List<Integer> nums) {
+        MyNode<Integer> a = MyNode.of(nums.get(0));
+        MyNode<Integer> b = MyNode.of(nums.get(1));
+        MyNode<Integer> c = MyNode.of(nums.get(2));
+        MyNode<Integer> d = MyNode.of(nums.get(3));
+        MyNode<Integer> e = MyNode.of(nums.get(4));
+        MyNode<Integer> f = MyNode.of(nums.get(5));
 
         a.left = b;
         a.right = c;

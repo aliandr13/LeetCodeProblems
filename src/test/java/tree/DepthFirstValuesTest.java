@@ -42,7 +42,7 @@ class DepthFirstValuesTest {
     @Test
     void testRecursiveOneNode() {
         DepthFirstValues<Character> dfv = new DepthFirstValues<>();
-        List<Character> treeValues = dfv.traversRecursive(Node.of('a'));
+        List<Character> treeValues = dfv.traversRecursive(MyNode.of('a'));
 
         Assertions.assertThat(treeValues)
                 .isNotEmpty()
@@ -52,7 +52,7 @@ class DepthFirstValuesTest {
     @Test
     void includes() {
         DepthFirstValues<Character> dfv = new DepthFirstValues<>();
-        Node<Character> tree = TreeUtils.getTree();
+        MyNode<Character> tree = TreeUtils.getTree();
         Assertions.assertThat((Boolean) dfv.includes(tree, 'f')).isTrue();
         Assertions.assertThat((Boolean) dfv.includes(tree, 'g')).isFalse();
         Assertions.assertThat((Boolean) dfv.includes(null, 'f')).isFalse();
@@ -61,7 +61,7 @@ class DepthFirstValuesTest {
     @Test
     void treeSum() {
         DepthFirstValues<Integer> dfv = new DepthFirstValues<>();
-        Node<Integer> tree = TreeUtils.getIntTree();
+        MyNode<Integer> tree = TreeUtils.getIntTree();
         Assertions.assertThat((Integer) dfv.treeSum(tree)).isEqualTo(25);
         Assertions.assertThat((Integer) dfv.treeSum(null)).isEqualTo(0);
     }
@@ -69,22 +69,22 @@ class DepthFirstValuesTest {
     @Test
     void treeMin() {
         DepthFirstValues<Integer> dfv = new DepthFirstValues<>();
-        Node<Integer> tree = TreeUtils.getIntTree();
+        MyNode<Integer> tree = TreeUtils.getIntTree();
         Assertions.assertThat((Integer) dfv.treeMinValue(tree)).isEqualTo(-2);
-        Assertions.assertThat((Integer) dfv.treeMinValue(Node.of(42))).isEqualTo(42);
+        Assertions.assertThat((Integer) dfv.treeMinValue(MyNode.of(42))).isEqualTo(42);
     }
 
     @Test
     void treeMaxPathSum() {
         DepthFirstValues<Integer> dfv = new DepthFirstValues<>();
-        Node<Integer> tree = TreeUtils.getIntTree(List.of(5, 11, 3, 4, 2, 1));
+        MyNode<Integer> tree = TreeUtils.getIntTree(List.of(5, 11, 3, 4, 2, 1));
         Assertions.assertThat(dfv.maxPathSum(tree)).isEqualTo(20);
     }
 
     @Test
     void treeMaxPathSumNegative() {
         DepthFirstValues<Integer> dfv = new DepthFirstValues<>();
-        Node<Integer> tree = TreeUtils.getIntTree(List.of(3, 11, 4, 4, -2, 1));
+        MyNode<Integer> tree = TreeUtils.getIntTree(List.of(3, 11, 4, 4, -2, 1));
         Assertions.assertThat(dfv.maxPathSumNegativeValues(tree)).isEqualTo(18);
     }
 
