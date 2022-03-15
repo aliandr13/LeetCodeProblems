@@ -10,7 +10,7 @@ public class Node {
         this.val = val;
     }
 
-    static Node of(int val) {
+    public static Node of(int val) {
         return new Node(val);
     }
 
